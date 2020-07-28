@@ -2,7 +2,8 @@ import React from 'react'
 import Produk from './Class/Produk';
 // import Blog from './Blog'
 
-const Home = () => {
+class Home extends React.Component {
+    render() {
     return <div>
           
     
@@ -16,6 +17,8 @@ const Home = () => {
 
         
     </div>
+}
+
 }
 
 export default Home;

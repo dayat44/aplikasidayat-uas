@@ -24,6 +24,8 @@ class ListComp extends PureComponent {
         })
     }
 
+    
+
     Deletemahasiswa = (idmahasiswa) => {
         const {mahasiswa} = this.state
         const data = qs.stringify({
@@ -56,19 +58,21 @@ class ListComp extends PureComponent {
     render() {
         return (
             <Container>
-                <h2>Data Mahasiswa</h2>
-                <Alert color="succes" style={{display: this.state.display}}>
+                <h2>Data Kartu Penerima Manfaat</h2>
+                <Alert color="success" style={{display: this.state.display}}>
                     {this.state.response}
                     </Alert>
-                <NavLink href="/mahasiswa/tambah"><Button color="succes">Tambah Data</Button></NavLink>
+                <NavLink href="/transaksi/tambah"><Button color="success">Tambah Data</Button></NavLink>
                 <hr/>
                 <Table className="table-bordered">
                 <thead>
                     <tr>
-                        <th>NIM</th>
-                        <th>Nama</th>
-                        <th>Jurusan</th>
+                        <th>NOMOR KPM</th>
+                        <th>Nama KPM</th>
+                        <th>ALAMAT</th>
                         <th>Aksi</th>
+                        
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -80,7 +84,7 @@ class ListComp extends PureComponent {
                             <td>
                                 <Link to = {
                                     {
-                                        pathname: '/mahasiswa/edit',
+                                        pathname: '/transaksi/edit',
                                         state: {
                                         id_mahasiswa: mahasiswa.id_mahasiswa,
                                         nim: mahasiswa.nim,

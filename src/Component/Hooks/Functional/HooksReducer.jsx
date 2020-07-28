@@ -8,6 +8,8 @@ import { keranjangContext } from '../../../App'
 function HooksReducer() {
 
     const countContext = useContext(keranjangContext)
+    
+    const [count, dispatch] = useReducer(reducer, initialState)
     return (
         <Container>
             <br />

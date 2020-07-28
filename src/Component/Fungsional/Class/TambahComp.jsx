@@ -23,8 +23,9 @@ class TambahComp extends PureComponent {
         this.setState({[e.target.name] : e.target.value})
     }
 
-    Addmahasiswa = () => {
-        axios.post(api+ '/tambah', {
+
+Addmahasiswa = () => {
+        axios.post(api + '/tambah', {
             nim: this.state.nim,
             nama: this.state.nama,
             jurusan: this.state.jurusan
@@ -42,37 +43,38 @@ class TambahComp extends PureComponent {
             }
         })
     } 
+    
    
     render() {
         return (
             <Container>
                 <h4>Form Tambah Data</h4>
-                <Alert color="succes" style={{display: this.state.display}}>
+                <Alert color="success" style={{display: this.state.display}}>
                     {this.state.response}
                     </Alert>
                 <Form className="form">
                     <Col>
-                    <Label>NIM</Label>
+                    <Label>NO. KPM</Label>
                     <FormGroup>
                         <Row>
                             <Col>
-                                <Input type="text" name="nim" value={this.state.nim} onChange={this.handleChange} placeholder="Masukan NIM"/>
+                                <Input type="text" name="nim" value={this.state.nim} onChange={this.handleChange} placeholder="Masukan NO. KPM"/>
                             </Col>
                         </Row>
                     </FormGroup>
-                    <Label>Nama</Label>
+                    <Label>Nama KPM</Label>
                     <FormGroup>
                         <Row>
                             <Col>
-                                <Input type="text" name="nama" value={this.state.nama} onChange={this.handleChange} placeholder="Masukan Nama"/>
+                                <Input type="text" name="nama" value={this.state.nama} onChange={this.handleChange} placeholder="Masukan Nama KPM"/>
                             </Col>
                         </Row>
                     </FormGroup>
-                    <Label>Jurusan</Label>
+                    <Label>Alamat</Label>
                     <FormGroup>
                         <Row>
                             <Col>
-                                <Input type="text" name="jurusan" value={this.state.jurusan} onChange={this.handleChange} placeholder="Masukan Jurusan"/>
+                                <Input type="text" name="jurusan" value={this.state.jurusan} onChange={this.handleChange} placeholder="Masukan Alamat"/>
                             </Col>
                         </Row>
                     </FormGroup>
